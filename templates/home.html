@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<center><h1>欢迎来到主页</h1></center><br>
+{% for gallery in gallerys.all %}
+{{ gallery.description }}<br>
+    <img src="{{ gallery.G_images.url }}" alt="">
+{% endfor %}
+
+</body>
+</html>
