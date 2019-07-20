@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ blogtext.title }}</title>
+</head>
+<style type="text/css">
+    pre{white-space: pre-wrap;
+    word-wrap: break-word;
+    }
+</style>
+
+<body>
+
+ <div >
+      <div style="text-align: center">
+{{ blogtext.title }}<br>
+        <h4>发表时间：{{ blogtext.date }}</h4><br>
+        <img src="{{ blogtext.image.url }}" alt="图片详情" style="align: center"><br>
+      </div>
+
+
+<pre style="width: 1200px;font-size: 150%;margin:20px auto;">{{ blogtext.text }}</pre>
+ <br>
+
+<p  style="text-align: center"><a href="..">返回上一页</a></p><br>
+ </div>
+  </body>
+
+</html>

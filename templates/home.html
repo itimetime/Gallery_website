@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>我的主页</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -72,7 +72,7 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">图库示例</h1>
-      <p class="lead text-muted">在其内容、创建者等下面的集合中，一些简短和前导的东西使它简短而甜蜜，但不要太短，这样人们就不会简单地跳过它了。</p>
+      <p class="lead text-muted">在其内容、创建者等下面的{{ gallerytext.date }}集合中，一些简短和前导的东西使它简短而甜蜜，但不要太短，这样人们就不会简单地跳过它了。</p>
       <p>
         <a href="blog" class="btn btn-primary my-2">我的博客</a>
         <a href="#" class="btn btn-secondary my-2">Secondary action</a>
@@ -98,10 +98,10 @@
               <p class="card-text">{{ gallery.description }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <a href="{{ gallery.id }}"> <button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <small class="text-muted">{{ gallery.add_date }}</small>
               </div>
             </div>
           </div>

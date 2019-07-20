@@ -20,6 +20,7 @@ from .import views
 
 urlpatterns = [
     path('', views.blog_page),
+    path('<int:blog_id>/', views.blog_text),
     #和include为同一种操作类型 A1
  #   path('blog', blog_page),
 ]

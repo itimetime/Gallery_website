@@ -1,15 +1,4 @@
-{#<!DOCTYPE html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#    <meta charset="UTF-8">#}
-{#    <title>博客</title>#}
-{##}
-{##}
-{#</head>#}
-{#<body>#}
 
-{#</body>#}
-{#</html>#}
 
 <!doctype html>
 <html lang="en">
@@ -104,7 +93,7 @@
       <div>
 
         {% for blog in blog.all %}
-        <h2><a href="#">{{ blog.title }}</a></h2><br>
+        <h2><a href="{{ blog.id }}">{{ blog.title }}</a></h2><br>
         {{ blog.date }}<br>
         <img src="{{ blog.image.url }}" width="400"  alt="博客图片"><br>
         <pre width="400">{{ blog.short_text }}</pre><br>

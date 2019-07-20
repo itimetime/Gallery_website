@@ -25,5 +25,6 @@ urlpatterns = [
     path('', views.home),
     #和include为同一种操作类型 A1
  #   path('blog', blog_page),
-     path('blog/', include('blog.urls'))
+    path('blog/', include('blog.urls')),
+    path('<int:gallery_id>/', views.gallery_text),
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
