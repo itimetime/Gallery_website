@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+</head>
+{% extends "theme2.html" %}
+{% block content  %}
+
+
+<body>
+<br>
+  <button class="btn btn-lg btn-primary btn-block" type="">统计结果，总字数为{{ count }}</button>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block" type="">你的文本为</button>
+{{ text }} <br>
+   <button class="btn btn-lg btn-primary btn-block" type="">给予Counter函数的统计</button>
+<br>
+{{ common }}<br>
+<button class="btn btn-lg btn-primary btn-block" type="">基于字典的统计</button>
+<br>
+{{ worddict }}<br>
+<button class="btn btn-lg btn-primary btn-block" type="">字典item进行sort排序：</button>
+
+{% for word, count in sorted %}<br>
+{{ word }} - {{ count }}<br>
+{% endfor %}
+</body>
+    <a href="..">回到主页</a><br>
+{% endblock content %}
+</html>

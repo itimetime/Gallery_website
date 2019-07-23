@@ -1,0 +1,15 @@
+{% extends "theme.html" %}
+{% block content  %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布成功</title>
+</head>
+<body>
+ <h1 align="center">恭喜你，发布成功</h1><br>
+ <h3 align="center"><a href="{% url '产品首页' %}">返回主页</a> <a href="{% url '发布页面' %}">继续发布</a></h3>
+</body>
+{% endblock content %}
+</html>

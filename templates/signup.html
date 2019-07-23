@@ -1,0 +1,49 @@
+{% extends 'theme.html' %}
+<title>注册</title>
+
+{% block content %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <form method='POST' action='{% url '注册页面' %}' align = 'center'>
+      {% csrf_token %}
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal">注册网站账户</h1>
+    <p><code>填写注册邮箱和密码并确认注册密码</code>  <a href="#">阅读注册协议</a></p>
+  </div>
+{#        img src=" {% static 'logo_p.png'%} " alt="Logo" height="30">#}
+
+  <div class="form-label-group">
+
+      注册邮箱:
+    <input type="email" name="用户名">
+  </div>
+      {{ 用户名错误 }}  <br>
+  <div class="form-label-group">
+         注册密码:
+    <input type="password" name="密码" >
+<br>
+  </div>
+        <br>
+        <div class="form-label-group">
+              确认密码:
+    <input type="password" name="确认密码" >
+<br>{{ 密码不一致 }}{{ 密码过短 }}
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> 记住我
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" >注册</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p>
+</form>
+
+
+
+
+{% endblock content %}

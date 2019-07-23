@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#    'gallery.apps.GalleryConfig',
     'gallery',
     'blog',
+    'string',
+    'ph',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +82,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portfolio',
+        'NAME': 'total',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',

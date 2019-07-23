@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布产品</title>
+</head>
+{% extends "theme.html" %}
+<body>
+
+{% block content  %}
+    <form method='POST' action='{% url '发布页面' %}' align = 'center' enctype="multipart/form-data">
+      {% csrf_token %}
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal">发布产品</h1>
+  </div>
+
+
+      标题:<br>
+    <input type="text" name="标题">
+     <br>
+<br>
+
+      介绍:<br>
+        <textarea cow="100"，row="10" name="APP介绍"></textarea>
+        <br>
+
+
+      APP链接:<br>
+    <input type="text" name="APP链接">
+
+     <br>
+<br>
+     　　　 APP图标（缩略图）:
+    <input type="file" name="APP图标">
+
+     <br>
+<br>
+      　　　　　　　　　　大图:
+    <input type="file" name="大图">
+     <br>
+        <br>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit" >发布</button>
+        </form>
+
+{% endblock content %}
+</body>
+</html>

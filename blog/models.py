@@ -13,4 +13,7 @@ class Blog(models.Model):
         return self.title
 
     def short_text(self):
-        return self.text[:100] + '...'
+        return self.text[:60] + '...'
+    class Meta:
+        verbose_name = u"博客"
+        verbose_name_plural = verbose_name

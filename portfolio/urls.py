@@ -20,11 +20,15 @@ from .import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home),
+    path('admin/', admin.site.urls,name = '后台'),
+    path('', views.home,name = '主站'),
     #和include为同一种操作类型 A1
  #   path('blog', blog_page),
     path('blog/', include('blog.urls')),
+    path('ph/', include('ph.urls')),
+    path('account/', include('account.urls')),
+    path('strings/', include('strings.urls')),
     path('<int:gallery_id>/', views.gallery_text),
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

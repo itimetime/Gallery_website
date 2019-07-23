@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+</head>
+{% extends "theme2.html" %}
+{% block content  %}
+
+
+<body>
+<h1 align="center">字数统计</h1>
+    <form action="count" >
+        <textarea align = 'center'cols = 45 rows = 20 name="text" placeholder="在此处输入文本"></textarea>
+        <br>
+        <input type="submit" value="统计"><br><br><br>
+        <a href="about">关于本页</a>
+    </form>
+</body>
+{% endblock content %}
+</html>

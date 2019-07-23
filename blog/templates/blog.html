@@ -1,19 +1,13 @@
-
-
 <!doctype html>
 <html lang="en">
-<style type="text/css">
-    pre{white-space: pre-wrap;
-    word-wrap: break-word;
-    }
-</style>
+{% load staticfiles %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>我的主页</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -47,8 +41,7 @@
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <h4 class="text-white">关于</h4>
-          <p class="text-muted">在下面添加关于相册、作者或任何其他背景上下文的一些信息。
-              多说几句，这样人们就可以收集到一些有用的信息。然后，将他们链接到一些社交网站或联系信息.</p>
+          <p class="text-muted">关于自己的建站实践</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">联系</h4>
@@ -63,9 +56,9 @@
   </div>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>图库</strong>
+      <a href="{% url '主站' %}" class="navbar-brand d-flex align-items-center">
+{#        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>#}
+         <img src=" {% static 'windmill.png'%} " alt="Logo" height="30"><strong>    随风</strong>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -79,7 +72,7 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">我的博客</h1>
-      <p class="lead text-muted">在其内容、创建者等下面的集合中，一些简短和前导的东西使它简短而甜蜜，但不要太短，这样人们就不会简单地跳过它了。</p>
+      <p class="lead text-muted">纯个人博客系统，网站排版将继续优化</p>
       <p>
         <a href=".." class="btn btn-primary my-2">回到主页</a>
 {#        <a href="#" class="btn btn-secondary my-2">Secondary action</a>#}
@@ -90,13 +83,23 @@
   <div class="album py-5 bg-light">
     <div class="container">
 
-      <div>
+{#      <div>#}
 
         {% for blog in blog.all %}
-        <h2><a href="{{ blog.id }}">{{ blog.title }}</a></h2><br>
-        {{ blog.date }}<br>
-        <img src="{{ blog.image.url }}" width="400"  alt="博客图片"><br>
-        <pre width="400">{{ blog.short_text }}</pre><br>
+
+
+
+
+
+ <div class="container jumbotron mt-3">
+
+    <h2>{{ blog.title }}</h2>
+    <p class="lead"><small class="text-muted">{{ blog.date }}</small>
+        <br>{{ blog.short_text }}</p>
+{#    <a class="btn btn-lg btn-primary" href="{{ blog.id }}" role="button">点击阅读 &raquo;</a>#}
+ <a href="{{ blog.id }}" class="btn btn-primary my-2">点击阅读&raquo;</a>
+
+</div>
 
     {% endfor %}
 
@@ -111,15 +114,12 @@
     <p class="float-right">
       <a href="#">Back to top</a>
     </p>
-    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
-  </div>
+    <p> 2019 &copy; ck, 基于Django框架2.2.3开发，Bootstrap4，阿里云服务器</p>
+     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-Official Themes
-Take Bootstrap 4 to the next level with official premium themes—toolkits built on Bootstrap with new components and plugins, docs, and build tools.
 
 </body>
 </html>

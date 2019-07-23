@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+</head>
+<body>
+<h1>统计结果，总字数为{{ count }}</h1>
+<h2>你的文本</h2>
+<a href="..">回到主页</a><br>
+{{ text }} <br>
+<h2>给予Counter函数的统计：</h2><br>
+{{ common }}<br>
+<h2>基于字典的统计：</h2><br>
+{{ worddict }}<br>
+<h2>字典item进行sort排序：</h2><br>
+{% for word, count in sorted %}
+{{ word }} - {{ count }}<br>
+{% endfor %}
+</body>
+</html>

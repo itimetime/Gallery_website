@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<title>我的主页</title>
+{% extends "theme.html" %}
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<br>
+{% block content  %}
+    <br>
+<h5 >点击右上角登录发布新产品<img src="{% static 'swipe-right.png' %}" height="30"></h5>
+
+
+       {% for product in products.all %}
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">{{ product.title }}<img src="{{ product.icon.url }}"height="30" alt=""></h1>
+    <p class="lead">{{ product.intro }}</p>
+      <img src="{{ product.image.url }}" alt="" height="100">
+    <p>点击连接 <a href="{{ product.url}}">下载</a><br>
+       <span class="text-muted">发布用户：{{ product.hunter }}</span>
+
+  </div>
+</main>
+
+
+
+{% endfor %}
+
+
+
+{% endblock content %}
+</body>
+</html>
+
+
+
+
+

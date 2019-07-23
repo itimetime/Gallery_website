@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ gallerytext.title }}</title>
+    <title>{{ blogtext.title }}</title>
 </head>
+<style type="text/css">
+    pre{white-space: pre-wrap;
+    word-wrap: break-word;
+    }
+</style>
+
 <body>
-{{ gallerytext.add_date }}
-</body>
+
+ <div >
+      <div style="text-align: center">
+{{ gallerytext.title }}<br>
+        <h4>添加时间：{{ gallerytext.add_date }}</h4><br>
+        <img src="{{ gallerytext.G_images.url }}" alt="图片详情" width="500" style="align: center"><br>
+      </div>
+
+
+<pre style="width: 800px;font-size: 150%;margin:20px auto;">{{ gallerytext.description }}</pre>
+ <br>
+
+<p  style="text-align: center"><a href="..">返回上一页</a></p><br>
+ </div>
+  </body>
+
 </html>
