@@ -31,4 +31,5 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('strings/', include('strings.urls')),
     path('<int:gallery_id>/', views.gallery_text),
+	path('todolist/', include('todo.urls')),
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

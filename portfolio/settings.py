@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'string',
     'ph',
     'account',
+	'todo',
 ]
 
 MIDDLEWARE = [
